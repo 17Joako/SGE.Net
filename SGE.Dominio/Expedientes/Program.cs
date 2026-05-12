@@ -1,1 +1,7 @@
-public int i =0;
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        
+    }
+}
