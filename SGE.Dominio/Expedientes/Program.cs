@@ -6,5 +6,6 @@ public class Program
         {
             Console.WriteLine($"Numero: {i}");
         }
+        System.Console.WriteLine("hola");
     }
 }
