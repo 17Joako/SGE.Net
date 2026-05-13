@@ -6,9 +6,5 @@ public class Program
         {
             Console.WriteLine($"Numero: {i}");
         }
-        foreach (var numero in Enumerable.Range(1, 10))
-        {
-            Console.WriteLine($"Numero: {numero}");
-        }
     }
 }
