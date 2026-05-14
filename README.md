@@ -24,7 +24,7 @@ git branch miBranch[nombre de nueva rama] //crea una nueva rama con ese nombre
 git branch switch [nombre de nueva rama] //cambia a la rama específicada
 
 # ¿Cuál es el orden de los comandos?.
-[hago todos los cambios que quiera] -> git add . -> git commit -m "[mensaje de commit preferiblemente explicativo]" -> git push/git push -u origin [rama]
+[hago todos los cambios que quiera] -> ctrl+s -> git add . -> git commit -m "[mensaje de commit preferiblemente explicativo]" -> git push/git push -u origin [rama]
 
 # Forma de trabajo
 cada uno va a usar su rama
