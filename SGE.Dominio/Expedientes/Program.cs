@@ -6,6 +6,7 @@ public class Program
         {
             Console.WriteLine($"Numero: {i}");
         }
+        Console.WriteLine("hola");
     }
 }
 //Joakin peladovich en ortovich de rucula
