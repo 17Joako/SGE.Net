@@ -21,7 +21,7 @@ git push -u origin[nombre de la rama a la que se conecta] miBranchJ[nombre de la
 # ¿Como hacer una nueva branch y como cambiar de branch?.
 git branch //muestra todas las ramas y marca la rama en la que se está trabajando
 git branch miBranchJ[nombre de nueva rama] //crea una nueva rama con ese nombre
-git branch switch [nombre de rama] //cambia a la rama específicada
+git switch [nombre de rama] //cambia a la rama específicada
 
 # ¿Cuál es el orden de los comandos?.
 [hago todos los cambios que quiera] -> ctrl+s -> git add . -> git commit -m "[mensaje de commit preferiblemente explicativo]" -> git push/git push -u origin [rama]

@@ -1,4 +1,4 @@
-public enum EstadoExpediente
+public enum EstadoExpedientes
 {
     RecienIniciado,
     ParaResolver,
