@@ -2,22 +2,21 @@ using Expedientes;
 public class Expediente
 {
     // datos de Expediente
-    private Guid Id { get; private set; }
+    private Guid Id { get; } // id único de cada expediente
     private CaratulaExpedientes Caratula { get; private set; }
-    private DateTime FechaCreacion { get; private set; }
-    private DateTime FechaUltimaModificacion { get; private set; }
-    private Guid UsuarioUltimoCambio { get; private set; }
-    
-    private EstadoExpediente Estado  { get; private set; }
+    private DateTime FechaCreacion { get; }
+    private DateTime FechaUltimaModificacion { get; private set; } // fecha del ultimo cambio realizado al expediente
+    private Guid UsuarioUltimoCambio { get; private set; } // id del usuario que realizó el último cambio al expediente
+    private EstadoExpediente Estado  { get; private set; } // tipo Enumerativo de posibles estados del expediente
     // constructor de Expediente
     public Expediente(Guid id, CaratulaExpedientes caratula, DateTime fechaCreacion, DateTime fechaUltimaModificacion, Guid usuarioUltimoCambio)
     {
         this.Id = id;
-        this.Caratula = caratula;
+        this.Caratula = new CaratulaExpedientes(caratula);
         this.FechaCreacion = fechaCreacion;
         this.FechaUltimaModificacion = fechaUltimaModificacion;
         this.UsuarioUltimoCambio = usuarioUltimoCambio;
-        this.Estado = EstadoExpediente.RecienIniciado;
+        this.Estado = EstadoExpedientes.RecienIniciado;
     }
 
     // Modificar caratula de expediente en caso de error al momento de la creación
@@ -27,8 +26,8 @@ public class Expediente
         if (!string.IsNullOrEmpty(nuevaCaratula.getTexto()))
         {
             this.Caratula = nuevaCaratula;
-            this.setUsuarioUltimoCambio(idUsuario);
-            this.setFechaUltimaModificacion(DateTime.Now);
+            this.UsuarioUltimoCambio = idUsuario;
+            this.FechaUltimaModificacion = DateTime.Now;
         }
         else
         {
@@ -44,23 +43,23 @@ public class Expediente
         bool aux = true;
         if (ultimaEtiqueta == null)
         {
-            this.setEstado(EstadoExpediente.RecienIniciado);
+            Estado = EstadoExpediente.RecienIniciado;
         }
         else if (ultimaEtiqueta == EtiquetaTramite.Resolucion)
         {
-            this.setEstado(EstadoExpediente.ConResolucion);
+            Estado = EstadoExpediente.ConResolucion;
         }
         else if (ultimaEtiqueta == EtiquetaTramite.PaseAEstudio)
         {
-            this.setEstado(EstadoExpediente.ParaResolver);
+            Estado = EstadoExpediente.ParaResolver;
         }
         else if (ultimaEtiqueta == EstadoExpediente.PaseAlArchivo)
         {
-            this.setEstado(EstadoExpediente.Finalizado);
+            Estado = EstadoExpediente.Finalizado;
         }
         else aux = false;
-        this.setUsuarioUltimoCambio(idUsuario);
-        this.setFechaUltimaModificacion(DateTime.Now);
+        UsuarioUltimoCambio=idUsuario;
+        FechaUltimaModificacion = DateTime.Now;
         return aux;
     }
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\bauti\\SGE.Net\\SGE.Net.csproj": {}
+    "C:\\Users\\bauti\\SGE.Net\\SGE.Net.csproj": {}
   },
   "projects": {
-    "c:\\Users\\bauti\\SGE.Net\\SGE.Net.csproj": {
+    "C:\\Users\\bauti\\SGE.Net\\SGE.Net.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\bauti\\SGE.Net\\SGE.Net.csproj",
+        "projectUniqueName": "C:\\Users\\bauti\\SGE.Net\\SGE.Net.csproj",
         "projectName": "SGE.Net",
-        "projectPath": "c:\\Users\\bauti\\SGE.Net\\SGE.Net.csproj",
+        "projectPath": "C:\\Users\\bauti\\SGE.Net\\SGE.Net.csproj",
         "packagesPath": "C:\\Users\\bauti\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\bauti\\SGE.Net\\obj\\",
+        "outputPath": "C:\\Users\\bauti\\SGE.Net\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bauti\\AppData\\Roaming\\NuGet\\NuGet.Config"
