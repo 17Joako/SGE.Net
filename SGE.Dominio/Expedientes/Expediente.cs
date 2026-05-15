@@ -1,6 +1,7 @@
 using Expedientes;
 public class Expediente
 {
+    // datos de Expediente
     private Guid Id { get; set; }
     private CaratulaExpedientes Caratula { get; set; }
     private DateTime FechaCreacion { get; set; }
@@ -8,7 +9,7 @@ public class Expediente
     private Guid UsuarioUltimoCambio { get; set; }
     
     private EstadoExpediente Estado  { get; set; }
-
+    // constructor de Expediente
     public Expediente(Guid id, CaratulaExpedientes caratula, DateTime fechaCreacion, DateTime fechaUltimaModificacion, Guid usuarioUltimoCambio)
     {
         this.Id = new Guid();
@@ -19,8 +20,28 @@ public class Expediente
         this.Estado = EstadoExpediente.RecienIniciado;
     }
 
-    public bool ActualizarEstado (EtiquetaTramite? ultimaEtiqueta, Guid idUsuario)
+    // Modificar caratula de expediente en caso de error al momento de la creación
+    public bool ModificarCaratula(CaratulaExpedientes nuevaCaratula, Guid idUsuario)
     {
+        bool aux = true;
+        if (!string.IsNullOrEmpty(nuevaCaratula.getTexto()))
+        {
+            this.Caratula = nuevaCaratula;
+            this.setUsuarioUltimoCambio(idUsuario);
+            this.setFechaUltimaModificacion(DateTime.Now);
+        }
+        else
+        {
+            aux = false;
+            throw new ArgumentException("La carátula no puede estar vacía.");
+        }
+        return aux;
+    }
+
+    // todavía por terminar
+    public bool ActualizarEstado (EtiquetaTramite? ultimaEtiqueta, Guid idUsuario) //por implementar: acceso a último trámite
+    {
+        bool aux = true;
         if (ultimaEtiqueta == null)
         {
             this.setEstado(EstadoExpediente.RecienIniciado);
@@ -37,9 +58,9 @@ public class Expediente
         {
             this.setEstado(EstadoExpediente.Finalizado);
         }
-        else
-        {
-            return false;
-        }
+        else aux = false;
+        this.setUsuarioUltimoCambio(idUsuario);
+        this.setFechaUltimaModificacion(DateTime.Now);
+        return aux;
     }
 }
