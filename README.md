@@ -26,5 +26,8 @@ git switch [nombre de rama] //cambia a la rama específicada
 # ¿Cuál es el orden de los comandos?.
 git switch main -> git pull -> git switch miBranch -> [hago todos los cambios que quiera] -> ctrl+s -> git add . -> git commit -m "[mensaje de commit preferiblemente explicativo]" -> git push/git push -u origin [rama]
 
+# ¿Como traer cambios de la main a mi rama?
+git switch miBranch -> git fetch origin -> git merge origin/main
+
 # Forma de trabajo
 cada uno va a usar su rama
