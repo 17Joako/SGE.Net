@@ -19,7 +19,7 @@ public class Tramite
         FechaUltimaModificacion = this.FechaCreacion;
         UsuarioUltimoCambio = this.ExpedienteId;
     }
-   /* public static Tramite Reconstruir(Guid id, Guid expedienteId, Etiquetas etiqueta,ContenidoTramite contenido,DateTime fechaCreacion,DateTime fechaUltimaModificacion,Guid usuarioUltimoCambio)
+    public static Tramite Reconstruir(Guid id, Guid expedienteId, Etiquetas etiqueta,ContenidoTramite contenido,DateTime fechaCreacion,DateTime fechaUltimaModificacion,Guid usuarioUltimoCambio)
     {
         //me mandan los datos desde la BD y yo reconstruyo el objeto
         return new Tramite
@@ -32,26 +32,6 @@ public class Tramite
             FechaUltimaModificacion = fechaUltimaModificacion,
             UsuarioUltimoCambio=usuarioUltimoCambio,
     };
-    }*/
-    public static Tramite Reconstruir(
-        Guid id, 
-        Guid expedienteId, 
-        Etiquetas etiqueta, 
-        ContenidoTramite contenido, 
-        DateTime fechaCreacion, 
-        DateTime fechaUltimaModificacion, 
-        Guid usuarioUltimoCambio)
-    {
-        // Ahora el 'new Tramite' funciona porque usará el constructor privado vacío de arriba
-        return new Tramite
-        {
-            Id = id,
-            ExpedienteId = expedienteId,
-            Etiqueta = etiqueta,
-            Contenido = contenido,
-            FechaCreacion = fechaCreacion,
-            FechaUltimaModificacion = fechaUltimaModificacion,
-            UsuarioUltimoCambio = usuarioUltimoCambio
-        };
     }
+
 }
