@@ -1,6 +1,6 @@
 public class CaratulExpedientes
 {
-    private string texto { get; set; }
+    private string texto { get; set; }//se deberia usar set o init? preguntar mañana
 
     public CaratulaExpedientes(string texto)
     {

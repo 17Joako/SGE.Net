@@ -63,4 +63,20 @@ public class Expediente
         this.setFechaUltimaModificacion(DateTime.Now);
         return aux;
     }
+    public void CambiarEstado(EstadoExpediente nuevoEstado, Guid idUsuario)//preguntar mañana si es mejor un booleano retornado o una excepcion
+    {
+        bool encontreUsuario=false;
+        StreamReader reader = new StreamReader("ruta_del_archivo_de_estados.txt");
+        //preguntar como saber cual es el id
+        while ((!reader.EndOfStream)&&(!encontreUsuario))
+        {
+            if(reader.ReadLine()==idUsuario.ToString())
+            {
+                //deberia modificar los archivos
+                encontreUsuario=true;
+            }
+        }
+        
+        reader.Close();
+    }
 }
