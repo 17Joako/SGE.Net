@@ -1,7 +1,7 @@
-public enum etiqueta{
+public enum Etiquetas{
         EscritoPresentado, 
         PaseAEstudio, 
-        Despacho, 
+        Despacho,
         Resolucion, 
         Notificacion,   
         PaseAlArchivo   
