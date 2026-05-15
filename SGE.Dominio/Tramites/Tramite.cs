@@ -1,11 +1,11 @@
 public class Tramite
-{   public Guid Id { get;}//guid1
-    public Guid ExpedienteId { get;}//recibe 
-    public Etiquetas Etiqueta { get;}//esto es enumerativo
-    public ContenidoTramite Contenido { get; init; }//aca se almacenan los datos de texto o string
-    public DateTime FechaCreacion { get;}//cuando se creo
-    public DateTime FechaUltimaModificacion{ get;private set; }//cuando se modifico la ultima vez la entidad
-    public Guid UsuarioUltimoCambio {get;private set; }
+{   private Guid Id { get;}//guid1
+    private Guid ExpedienteId { get; private set;}//recibe 
+    private Etiquetas Etiqueta { get; private set;}//esto es enumerativo
+    private ContenidoTramite Contenido { get; init; }//aca se almacenan los datos de texto o string
+    private DateTime FechaCreacion { get;private set;}//cuando se creo
+    private DateTime FechaUltimaModificacion{ get;private set; }//cuando se modifico la ultima vez la entidad
+    private Guid UsuarioUltimoCambio {get;private set; }
 
     public Tramite(Guid expedienteID,ContenidoTramite contenido)
     {
@@ -19,14 +19,16 @@ public class Tramite
     }
     public static Expediente Reconstruir(Guid id, Guid expedienteId, Etiquetas etiqueta,ContenidoTramite contenido,DateTime fechaCreacion,DateTime fechaUltimaModificacion,Guid usuarioUltimoCambio)
     {
-        // Aquí no se genera un Guid nuevo ni se obliga a que el estado sea "Abierto".
-        // Simplemente se "rehidrata" el objeto con los datos históricos de la BD.
+        //me mandan los datos desde la BD y yo reconstruyo el objeto
         return new Expediente
         {
             Id = id,
             ExpedienteId = expedienteId,
             Etiqueta=etiqueta,
-            Eti
+            Etiqueta=etiqueta,
+            Contenido=contenido,
+            FechaCreacion=fechaCreacion,
+            FechaUltimaModificacion= fechaUltimaModificacion,
         };
     }
 }
