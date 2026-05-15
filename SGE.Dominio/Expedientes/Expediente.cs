@@ -2,21 +2,20 @@ using Expedientes;
 public class Expediente
 {
     // datos de Expediente
-    private Guid Id { get; set; }
-    private CaratulaExpedientes Caratula { get; set; }
-    private DateTime FechaCreacion { get; set; }
-    private DateTime FechaUltimaModificacion { get; set; }
-    private Guid UsuarioUltimoCambio { get; set; }
-    
-    private EstadoExpediente Estado  { get; set; }
+    private Guid Id { get; } // id único de cada expediente
+    private CaratulaExpedientes Caratula { get; private set; }
+    private DateTime FechaCreacion { get; }
+    private DateTime FechaUltimaModificacion { get; private set; } // fecha del ultimo cambio realizado al expediente
+    private Guid UsuarioUltimoCambio { get; private set; } // id del usuario que realizó el último cambio al expediente
+    private EstadoExpediente Estado  { get; private set; } // tipo Enumerativo de posibles estados del expediente
     // constructor de Expediente
     public Expediente(Guid id, CaratulaExpedientes caratula, DateTime fechaCreacion, DateTime fechaUltimaModificacion, Guid usuarioUltimoCambio)
     {
-        this.Id = new Guid();
+        this.Id = id;
         this.Caratula = new CaratulaExpedientes(caratula);
         this.FechaCreacion = fechaCreacion;
         this.FechaUltimaModificacion = fechaUltimaModificacion;
-        this.UsuarioUltimoCambio = new Guid();
+        this.UsuarioUltimoCambio = usuarioUltimoCambio;
         this.Estado = EstadoExpediente.RecienIniciado;
     }
 
