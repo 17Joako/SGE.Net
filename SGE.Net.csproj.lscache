@@ -70,7 +70,9 @@ SGE.Dominio/
   ContenidoTramite.cs
   Etiquetas.cs
   Tramite.cs
-SGE.Infraestructura/Program.cs
+SGE.Infraestructura/
+ Program.cs
+ RepositorioExpedienteTXT.cs
 
 [metadataReferences]
 <DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.5/ref/net10.0/

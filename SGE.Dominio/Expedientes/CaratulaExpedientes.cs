@@ -2,7 +2,7 @@ public record class CaratulExpedientes // que es una record class?
 {
     private string texto { get; set; }//se deberia usar set o init? preguntar mañana
 
-    public CaratulaExpedientes(string texto)
+    public void CaratulaExpedientes(string texto)
     {
         if (!string.IsNullOrEmpty(texto))
         {

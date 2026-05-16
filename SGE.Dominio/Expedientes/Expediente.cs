@@ -6,9 +6,9 @@ public class Expediente
     private CaratulaExpedientes Caratula { get; private set; }
     private DateTime FechaCreacion { get; private set; }
     private DateTime FechaUltimaModificacion { get; private set; }
-    private Guid UsuarioUltimoCambio { get; private set; }
+    public Guid UsuarioUltimoCambio { get; private set; }
     
-    private EstadoExpediente Estado  { get; private set; }
+    private EstadoExpedientes Estado  { get; private set; }
     // constructor de Expediente
     public Expediente(Guid id, CaratulaExpedientes caratula, DateTime fechaCreacion, DateTime fechaUltimaModificacion, Guid usuarioUltimoCambio)
     {
