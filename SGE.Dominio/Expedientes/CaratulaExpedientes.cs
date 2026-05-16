@@ -1,4 +1,4 @@
-public record class CaratulExpedientes // que es una record class?
+public record class CaratulaExpedientes // que es una record class?
 {
     private string texto { get; set; }//se deberia usar set o init? preguntar mañana
 
